@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sql-ypp-march-2022.database.windows.net.db-oltp.YppAdmin"
+  DTS:DTSID="{25FC82E4-37EB-4980-8B55-88A92ECF3619}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-oltp;Persist Security Info=True;Application Name=SSIS-ETL_Case_VisionAirport-{25FC82E4-37EB-4980-8B55-88A92ECF3619}sql-ypp-march-2022.database.windows.net.db-oltp.YppAdmin;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2QlVjmehEEenw/c1HaFx2AAAAAACAAAAAAAQZgAAAAEAACAAAAD56VT8oL4xs+hxgqpFRTpz4Gjw19pcaW3V6HUS7y7NgQAAAAAOgAAAAAIAACAAAABV5X7DHpkKAxSWRTgYLQUTZWkC7az5V3NMJZuL+s2MV4AAAACyMCYfTEkgril/vF9wjUq6ssnQG0n4WSFQ+7iQhh9tB1RrPKVmWDeSiG2IjS1YnCh7oPeBZOwKv1TV6Lf7jjB6jYz++LIIxnzToZhTokw+RrDz67B90gYu+IDE5mYujG4w4pIOkBeWnf+8nYtWBp20Udwpunz0Bhx1OM5DESCwaEAAAAASnjJouXLwWVxGJlpcqZZB5SNE38fSKTEJbrpOo5noWSJ8/9Udu7GGjrimsrRsxv+K92s6+SnpND0tcQSv+uUL</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
