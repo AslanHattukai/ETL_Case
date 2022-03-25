@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">C3514205</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclm1ANgjIkKM4dukuaB+2gAAAAACAAAAAAAQZgAAAAEAACAAAACrARDTi3WEXP9pd5nK6oHbp8TM8LHezxzktwXXyqVqXQAAAAAOgAAAAAIAACAAAAAIJHTvl7tLrLeSnHBhDJZuFuhaI/h8Pq7Sx1shwLgXVZAAAADl/9ghmIyD+pLxx8Jf9HILFO+wkGfAsyMi2veBafPY6aitccNVtIaF5Hwbvw3XH6yH9a/zR/B1MiRnDl0e0vsRtX4r7Lg13OsL7xpk8uerewYccbR3Cdkslq99pq86U3XEEcJZm5Gn9xPV6sCCL9lny6XSz0NGdaiwlDuqGe5KwiJKaErey36pR2UN0W/LEoBAAAAAytRPtmDvpwG+rI7XGGeVVagxo0fqbuMMxSQSoUU0umHi9cOJAMnERcbYAbGqPzYVGlkN25EThoUzq5PJp6d09A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclm1ANgjIkKM4dukuaB+2gAAAAACAAAAAAAQZgAAAAEAACAAAAA/h0Nt3NHyL5kn5yAtBf9fYPsb9INpBln99uBtZdGexQAAAAAOgAAAAAIAACAAAAC+S2uC/my7/h/Udd+pjyw4tW8e1V9VwBpEAeIhrmSPSpAAAAC0otgPNwN5tayJbMpYdD8o49jVgj+Wtrfu8IdBCnYjtKjFUnmA3zZIXeDWM7s0Tfeorrw09My3qijT7D6w5DNC2sjq2R3azd0RHpz4e7Vs3xyNeqc3XlnZ5oA2D6XgmB7YOfM8jVaJT3yCKLRUlrxmhgtf3kpXScfZVyfRSptdVNEd8aIa05cA8Ls0+PE8lSVAAAAA2gmgBhTiedBxQNxqyrDNQ7SdmaLIQdTj74/zRJHGcbJvSx5TpogGw7cr3jecwLP1RNoixEueX0UN8XRjU8cqCQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -37,10 +37,10 @@
           <SSIS:Package SSIS:Name="DIM_Planning.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DIM_Maatschappij.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DIM_Vlucht.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="DIM_Calender.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FAC_Aankomst.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FAC_Vertrek.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DIM_Baan.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DIM_Calender.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SQL_DWH.conmgr" />
@@ -437,23 +437,6 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="DIM_Calender.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{B0B1C855-A01A-4B3D-867D-ECB79B00CD81}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7445D183-5FBE-405E-A6C9-39D960EBA931}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="FAC_Aankomst.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{AE3359E9-DDBB-4FDD-BCCF-3FCDE5905A6E}</SSIS:Property>
@@ -498,6 +481,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{19FC6D87-C141-42E6-854A-CD87BAA886F4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="DIM_Calender.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{4E04C1AE-C770-48EA-A450-6CFC607E4FC5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5D2F87F7-DDA3-4889-9527-B5E72489976C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
