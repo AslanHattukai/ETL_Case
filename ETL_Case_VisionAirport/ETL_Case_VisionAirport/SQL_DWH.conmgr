@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQL_DWH"
+  DTS:DTSID="{409230DD-F2AF-4854-A5DF-F23CDF7708B2}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::SQL_DWH_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-dwh;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclm1ANgjIkKM4dukuaB+2gAAAAACAAAAAAAQZgAAAAEAACAAAAC/9hRjM2JzoGEKWW9Yxqr3Jcs0uR/JZHAdp23VihmhLQAAAAAOgAAAAAIAACAAAAA24Jd8tIoV/ARB+8kYDH3etDfhWoNpr2R0hHQ8KFeZfIAAAACp35yLDqUGa1wcEJDaus7dunDVJlunuwlC9g+XOVriRWTVCWkOqSCx6AjmVFfElb9ZMJ5VcrAH1j97bymAANrRe4LJWNMJguwgv3oyG5src7C9WHyxQGVmtPXcqEZUwFeXlwXMPyRNU72YdZLSpTX7VQsCVy+jg3+Gqjdxk3+ZoUAAAAD0Obbllov6p/PAlmMS8JBliDFI1p3lKXup7q9oCpW9wFJYdz9tthq7mrEy5tSLbGHB+1uyP1NsZVk+aPh2A8vU</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
