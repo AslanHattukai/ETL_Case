@@ -1,0 +1,1006 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/2/2022 12:57:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="C9601220"
+  DTS:CreatorName="ORDINA\SaPu"
+  DTS:DTSID="{96A3733D-6BED-4511-83BA-3287EC4866C2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Dim_Tijd"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{5C9B5B26-D8C9-4919-B6FB-A825B98D88C0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Tijd"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2A4950EE-1820-4E01-9014-2E94C069499A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Tijd"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Tijd\DWH Tijd"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DWH Tijd"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DIM_Tijd]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Tijd\DWH Tijd.Connections[OleDbConnection]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[TijdID]"
+                      cachedDataType="i4"
+                      cachedName="TijdID"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[TijdID]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TijdID]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Tijd]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Tijd"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Tijd]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Tijd]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Tijdtekst]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Tijdtekst"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Tijdtekst]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Tijdtekst]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur]"
+                      cachedDataType="i2"
+                      cachedName="Uur"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Minuut]"
+                      cachedDataType="i2"
+                      cachedName="Minuut"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Minuut]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Minuut]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Seconde]"
+                      cachedDataType="i2"
+                      cachedName="Seconde"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Seconde]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Seconde]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[TotaalSeconden]"
+                      cachedDataType="i4"
+                      cachedName="TotaalSeconden"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[TotaalSeconden]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TotaalSeconden]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[TijdDecimaal]"
+                      cachedDataType="numeric"
+                      cachedName="TijdDecimaal"
+                      cachedPrecision="6"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[TijdDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TijdDecimaal]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur30Minuten]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Uur30Minuten"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur30Minuten]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur30Minuten]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur30MinutenDecimaal]"
+                      cachedDataType="numeric"
+                      cachedName="Uur30MinutenDecimaal"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur30MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur30MinutenDecimaal]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur15Minuten]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Uur15Minuten"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur15Minuten]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur15Minuten]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur15MinutenDecimaal]"
+                      cachedDataType="numeric"
+                      cachedName="Uur15MinutenDecimaal"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur15MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur15MinutenDecimaal]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur10Minuten]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Uur10Minuten"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur10Minuten]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur10Minuten]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur10MinutenDecimaal]"
+                      cachedDataType="numeric"
+                      cachedName="Uur10MinutenDecimaal"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur10MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur10MinutenDecimaal]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur5Minuten]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Uur5Minuten"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur5Minuten]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur5Minuten]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[Uur5MinutenDecimaal]"
+                      cachedDataType="numeric"
+                      cachedName="Uur5MinutenDecimaal"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur5MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur5MinutenDecimaal]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[UurMinuten]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="UurMinuten"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[UurMinuten]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[UurMinuten]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[UurMinutenDecimaal]"
+                      cachedDataType="numeric"
+                      cachedName="UurMinutenDecimaal"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[UurMinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[UurMinutenDecimaal]" />
+                    <inputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].Columns[AM-PM]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="AM-PM"
+                      externalMetadataColumnId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[AM-PM]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[AM-PM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[TijdID]"
+                      dataType="i4"
+                      name="TijdID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Tijd]"
+                      dataType="wstr"
+                      length="8"
+                      name="Tijd" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Tijdtekst]"
+                      dataType="wstr"
+                      length="8"
+                      name="Tijdtekst" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur]"
+                      dataType="i2"
+                      name="Uur" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Minuut]"
+                      dataType="i2"
+                      name="Minuut" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Seconde]"
+                      dataType="i2"
+                      name="Seconde" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[TotaalSeconden]"
+                      dataType="i4"
+                      name="TotaalSeconden" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[TijdDecimaal]"
+                      dataType="numeric"
+                      name="TijdDecimaal"
+                      precision="6"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur30Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur30Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur30MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur30MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur15Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur15Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur15MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur15MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur10Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur10Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur10MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur10MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur5Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur5Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[Uur5MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur5MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[UurMinuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="UurMinuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[UurMinutenDecimaal]"
+                      dataType="numeric"
+                      name="UurMinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input].ExternalColumns[AM-PM]"
+                      dataType="wstr"
+                      length="2"
+                      name="AM-PM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Tijd\DWH Tijd.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Tijd\DWH Tijd.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Tijd\DWH Tijd.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Tijd\DWH Tijd.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Tijd\OLTP Tijd"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLTP Tijd"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimTijd]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Tijd\OLTP Tijd.Connections[OleDbConnection]"
+                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL_OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TijdID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[TijdID]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TijdID]"
+                      name="TijdID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Tijd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Tijd]"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Tijd]"
+                      name="Tijd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Tijdtekst]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Tijdtekst]"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Tijdtekst]"
+                      name="Tijdtekst"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur]"
+                      name="Uur"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Minuut]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Minuut]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Minuut]"
+                      name="Minuut"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Seconde]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Seconde]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Seconde]"
+                      name="Seconde"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TotaalSeconden]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[TotaalSeconden]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TotaalSeconden]"
+                      name="TotaalSeconden"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TijdDecimaal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[TijdDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[TijdDecimaal]"
+                      name="TijdDecimaal"
+                      precision="6"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur30Minuten]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur30Minuten]"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur30Minuten]"
+                      name="Uur30Minuten"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur30MinutenDecimaal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur30MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur30MinutenDecimaal]"
+                      name="Uur30MinutenDecimaal"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur15Minuten]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur15Minuten]"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur15Minuten]"
+                      name="Uur15Minuten"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur15MinutenDecimaal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur15MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur15MinutenDecimaal]"
+                      name="Uur15MinutenDecimaal"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur10Minuten]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur10Minuten]"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur10Minuten]"
+                      name="Uur10Minuten"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur10MinutenDecimaal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur10MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur10MinutenDecimaal]"
+                      name="Uur10MinutenDecimaal"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur5Minuten]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur5Minuten]"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur5Minuten]"
+                      name="Uur5Minuten"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur5MinutenDecimaal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur5MinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[Uur5MinutenDecimaal]"
+                      name="Uur5MinutenDecimaal"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[UurMinuten]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[UurMinuten]"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[UurMinuten]"
+                      name="UurMinuten"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[UurMinutenDecimaal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[UurMinutenDecimaal]"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[UurMinutenDecimaal]"
+                      name="UurMinutenDecimaal"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[AM-PM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[AM-PM]"
+                      length="2"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].Columns[AM-PM]"
+                      name="AM-PM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[TijdID]"
+                      dataType="i4"
+                      name="TijdID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Tijd]"
+                      dataType="wstr"
+                      length="8"
+                      name="Tijd" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Tijdtekst]"
+                      dataType="wstr"
+                      length="8"
+                      name="Tijdtekst" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur]"
+                      dataType="i2"
+                      name="Uur" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Minuut]"
+                      dataType="i2"
+                      name="Minuut" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Seconde]"
+                      dataType="i2"
+                      name="Seconde" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[TotaalSeconden]"
+                      dataType="i4"
+                      name="TotaalSeconden" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[TijdDecimaal]"
+                      dataType="numeric"
+                      name="TijdDecimaal"
+                      precision="6"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur30Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur30Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur30MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur30MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur15Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur15Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur15MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur15MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur10Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur10Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur10MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur10MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur5Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="Uur5Minuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[Uur5MinutenDecimaal]"
+                      dataType="numeric"
+                      name="Uur5MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[UurMinuten]"
+                      dataType="wstr"
+                      length="8"
+                      name="UurMinuten" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[UurMinutenDecimaal]"
+                      dataType="numeric"
+                      name="UurMinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output].ExternalColumns[AM-PM]"
+                      dataType="wstr"
+                      length="2"
+                      name="AM-PM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[TijdID]"
+                      dataType="i4"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[TijdID]"
+                      name="TijdID" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Tijd]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Tijd]"
+                      name="Tijd" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Tijdtekst]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Tijdtekst]"
+                      name="Tijdtekst" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur]"
+                      dataType="i2"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur]"
+                      name="Uur" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Minuut]"
+                      dataType="i2"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Minuut]"
+                      name="Minuut" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Seconde]"
+                      dataType="i2"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Seconde]"
+                      name="Seconde" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[TotaalSeconden]"
+                      dataType="i4"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[TotaalSeconden]"
+                      name="TotaalSeconden" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[TijdDecimaal]"
+                      dataType="numeric"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[TijdDecimaal]"
+                      name="TijdDecimaal"
+                      precision="6"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur30Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur30Minuten]"
+                      name="Uur30Minuten" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur30MinutenDecimaal]"
+                      dataType="numeric"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur30MinutenDecimaal]"
+                      name="Uur30MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur15Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur15Minuten]"
+                      name="Uur15Minuten" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur15MinutenDecimaal]"
+                      dataType="numeric"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur15MinutenDecimaal]"
+                      name="Uur15MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur10Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur10Minuten]"
+                      name="Uur10Minuten" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur10MinutenDecimaal]"
+                      dataType="numeric"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur10MinutenDecimaal]"
+                      name="Uur10MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur5Minuten]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur5Minuten]"
+                      name="Uur5Minuten" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur5MinutenDecimaal]"
+                      dataType="numeric"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[Uur5MinutenDecimaal]"
+                      name="Uur5MinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[UurMinuten]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[UurMinuten]"
+                      name="UurMinuten" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[UurMinutenDecimaal]"
+                      dataType="numeric"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[UurMinutenDecimaal]"
+                      name="UurMinutenDecimaal"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[AM-PM]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[AM-PM]"
+                      name="AM-PM" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Tijd.Paths[OLE DB Source Output]"
+              endId="Package\Import Tijd\DWH Tijd.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import Tijd\OLTP Tijd.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate DimTijd"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{552CDF21-D711-474A-945E-2E3E1932122F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate DimTijd"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.DIM_Tijd" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{770C382B-8DBF-4EB4-AC48-F602BB6E8443}"
+      DTS:From="Package\Truncate DimTijd"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Tijd" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Import Tijd"
+          TopLeft="245.714289898775,99.4117661000948" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Truncate DimTijd"
+          TopLeft="237.857146907826,12.2352942892424" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="314.5857184033,53.8352942892424">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5764718108524"
+              Start="0,0"
+              End="0,38.0764718108524">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0764718108524" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Tijd">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="124,41.6"
+          Id="Package\Import Tijd\OLTP Tijd"
+          TopLeft="317.142862543768,32.1176475092614" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Import Tijd\DWH Tijd"
+          TopLeft="322.857148355367,137.647060753977" />
+        <EdgeLayout
+          Id="Package\Import Tijd.Paths[OLE DB Source Output]"
+          TopLeft="381.800005449567,73.7176475092614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.9294132447156"
+              Start="0,0"
+              End="0,56.4294132447156">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.4294132447156" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Tijd\DWH Tijd">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Tijd\OLTP Tijd">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

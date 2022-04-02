@@ -4,7 +4,7 @@
     SSIS:Name="SQL_DWH_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{a31a923d-b5a5-47de-8578-2c664f75e684}</SSIS:Property>
+        SSIS:Name="ID">{cae87aa5-bc8f-46f2-9f9e-d295b8e3acdc}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-dwh;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Password =!OrdinaMarch2022;Initial Catalog=db-dwh;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -25,7 +25,7 @@
     SSIS:Name="SQL_OLTP_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{78ccb8d9-b5e1-49d4-9281-68f537367280}</SSIS:Property>
+        SSIS:Name="ID">{5ff90ebc-34bf-4977-ae14-e5872ea4a942}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -37,7 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-oltp;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Password =!OrdinaMarch2022;Initial Catalog=db-oltp;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

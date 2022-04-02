@@ -1,0 +1,2500 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/2/2022 12:57:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="C9601220"
+  DTS:CreatorName="ORDINA\SaPu"
+  DTS:DTSID="{F8D5E3B6-EB33-4F6E-9F92-ED8B2FE97FF2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Dim_Calender"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{69058742-F07C-4FB6-AF97-A689401C09FA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Calender"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D79903F5-35A1-4698-930A-DC7A2CA38614}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Calender"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Calender\DWH Calender"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DWH Calender"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DIM_Calender]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Calender\DWH Calender.Connections[OleDbConnection]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[DatumID]"
+                      cachedDataType="i4"
+                      cachedName="DatumID"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DatumID]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DatumID]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Datum]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Datum"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datum]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[DatumDateTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DatumDateTime"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DatumDateTime]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DatumDateTime]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Datumnaam]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Datumnaam"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Datumnaam]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datumnaam]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Datumtekst]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Datumtekst"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Datumtekst]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datumtekst]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Jaar]"
+                      cachedDataType="i4"
+                      cachedName="Jaar"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Jaar]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Jaar]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Semesternummer]"
+                      cachedDataType="i4"
+                      cachedName="Semesternummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Semesternummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Semesternummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Semester]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Semester"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Semester]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Semester]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[JaarSemester]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="JaarSemester"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarSemester]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarSemester]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Kwartaalnummer]"
+                      cachedDataType="i4"
+                      cachedName="Kwartaalnummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Kwartaalnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Kwartaalnummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Kwartaal]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Kwartaal"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Kwartaal]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Kwartaal]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[JaarKwartaal]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="JaarKwartaal"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarKwartaal]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarKwartaal]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Maandnummer]"
+                      cachedDataType="i4"
+                      cachedName="Maandnummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Maandnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maandnummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Maand]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Maand"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Maand]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maand]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[JaarMaandnummer]"
+                      cachedDataType="i4"
+                      cachedName="JaarMaandnummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarMaandnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarMaandnummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[MaandJaar]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="MaandJaar"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[MaandJaar]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[MaandJaar]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Maandnaam]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Maandnaam"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Maandnaam]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maandnaam]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[MaandKort]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="MaandKort"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[MaandKort]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[MaandKort]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[jjjj-mm]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="jjjj-mm"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[jjjj-mm]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[jjjj-mm]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Weeknummer]"
+                      cachedDataType="i4"
+                      cachedName="Weeknummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Weeknummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Weeknummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[WeekJaar]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="WeekJaar"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[WeekJaar]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[WeekJaar]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Week]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Week"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Week]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Week]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[JaarWeek]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="JaarWeek"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarWeek]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarWeek]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Dagnummer]"
+                      cachedDataType="i4"
+                      cachedName="Dagnummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Dagnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Dagnummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Dag]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Dag"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Dag]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Dag]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Weekdagnummer]"
+                      cachedDataType="i4"
+                      cachedName="Weekdagnummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Weekdagnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Weekdagnummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[JaarDagNummer]"
+                      cachedDataType="i4"
+                      cachedName="JaarDagNummer"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarDagNummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarDagNummer]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[DagKort]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="DagKort"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DagKort]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DagKort]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[IsWeekend]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="IsWeekend"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[IsWeekend]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[IsWeekend]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[IsWettelijkeFeestdag]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="IsWettelijkeFeestdag"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[IsWettelijkeFeestdag]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[IsWettelijkeFeestdag]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[oltpWeerID]"
+                      cachedDataType="i4"
+                      cachedName="oltpWeerID"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[oltpWeerID]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[oltpWeerID]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[DDVEC]"
+                      cachedDataType="nText"
+                      cachedName="DDVEC"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DDVEC]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DDVEC]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FHVEC]"
+                      cachedDataType="nText"
+                      cachedName="FHVEC"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHVEC]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHVEC]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FG]"
+                      cachedDataType="nText"
+                      cachedName="FG"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FG]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FHX]"
+                      cachedDataType="nText"
+                      cachedName="FHX"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHX]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FHXH]"
+                      cachedDataType="nText"
+                      cachedName="FHXH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHXH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FHN]"
+                      cachedDataType="nText"
+                      cachedName="FHN"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHN]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FHNH]"
+                      cachedDataType="nText"
+                      cachedName="FHNH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHNH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FXX]"
+                      cachedDataType="nText"
+                      cachedName="FXX"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FXX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FXX]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[FXXH]"
+                      cachedDataType="nText"
+                      cachedName="FXXH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FXXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FXXH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[TG]"
+                      cachedDataType="nText"
+                      cachedName="TG"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TG]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[TN]"
+                      cachedDataType="nText"
+                      cachedName="TN"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TN]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[TNH]"
+                      cachedDataType="nText"
+                      cachedName="TNH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TNH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[TX]"
+                      cachedDataType="nText"
+                      cachedName="TX"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TX]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[TXH]"
+                      cachedDataType="nText"
+                      cachedName="TXH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TXH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[T10N]"
+                      cachedDataType="nText"
+                      cachedName="T10N"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[T10N]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[T10N]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[T10NH]"
+                      cachedDataType="nText"
+                      cachedName="T10NH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[T10NH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[T10NH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[SQ]"
+                      cachedDataType="nText"
+                      cachedName="SQ"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[SQ]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[SQ]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[SP]"
+                      cachedDataType="nText"
+                      cachedName="SP"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[SP]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[SP]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[Q]"
+                      cachedDataType="nText"
+                      cachedName="Q"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Q]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Q]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[DR]"
+                      cachedDataType="nText"
+                      cachedName="DR"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DR]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DR]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[RH]"
+                      cachedDataType="nText"
+                      cachedName="RH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[RH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[RHX]"
+                      cachedDataType="nText"
+                      cachedName="RHX"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[RHX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RHX]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[RHXH]"
+                      cachedDataType="nText"
+                      cachedName="RHXH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[RHXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RHXH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[PG]"
+                      cachedDataType="nText"
+                      cachedName="PG"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PG]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[PX]"
+                      cachedDataType="nText"
+                      cachedName="PX"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PX]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[PXH]"
+                      cachedDataType="nText"
+                      cachedName="PXH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PXH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[PN]"
+                      cachedDataType="nText"
+                      cachedName="PN"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PN]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[PNH]"
+                      cachedDataType="nText"
+                      cachedName="PNH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PNH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[VVN]"
+                      cachedDataType="nText"
+                      cachedName="VVN"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVN]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[VVNH]"
+                      cachedDataType="nText"
+                      cachedName="VVNH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVNH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[VVX]"
+                      cachedDataType="nText"
+                      cachedName="VVX"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVX]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[VVXH]"
+                      cachedDataType="nText"
+                      cachedName="VVXH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVXH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[NG]"
+                      cachedDataType="nText"
+                      cachedName="NG"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[NG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[NG]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[UG]"
+                      cachedDataType="nText"
+                      cachedName="UG"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UG]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[UX]"
+                      cachedDataType="nText"
+                      cachedName="UX"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UX]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[UXH]"
+                      cachedDataType="nText"
+                      cachedName="UXH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UXH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[UN]"
+                      cachedDataType="nText"
+                      cachedName="UN"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UN]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[UNH]"
+                      cachedDataType="nText"
+                      cachedName="UNH"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UNH]" />
+                    <inputColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].Columns[EV2]"
+                      cachedDataType="nText"
+                      cachedName="EV2"
+                      externalMetadataColumnId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[EV2]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[EV2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DatumID]"
+                      dataType="i4"
+                      name="DatumID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[oltpWeerID]"
+                      dataType="i4"
+                      name="oltpWeerID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
+                      dataType="wstr"
+                      length="10"
+                      name="Datum" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DatumDateTime]"
+                      dataType="dbTimeStamp"
+                      name="DatumDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Datumnaam]"
+                      dataType="wstr"
+                      length="10"
+                      name="Datumnaam" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Datumtekst]"
+                      dataType="wstr"
+                      length="20"
+                      name="Datumtekst" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Jaar]"
+                      dataType="i4"
+                      name="Jaar" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Semesternummer]"
+                      dataType="i4"
+                      name="Semesternummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Semester]"
+                      dataType="wstr"
+                      length="3"
+                      name="Semester" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarSemester]"
+                      dataType="wstr"
+                      length="7"
+                      name="JaarSemester" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Kwartaalnummer]"
+                      dataType="i4"
+                      name="Kwartaalnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Kwartaal]"
+                      dataType="wstr"
+                      length="3"
+                      name="Kwartaal" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarKwartaal]"
+                      dataType="wstr"
+                      length="7"
+                      name="JaarKwartaal" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Maandnummer]"
+                      dataType="i4"
+                      name="Maandnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Maand]"
+                      dataType="wstr"
+                      length="10"
+                      name="Maand" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarMaandnummer]"
+                      dataType="i4"
+                      name="JaarMaandnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[MaandJaar]"
+                      dataType="wstr"
+                      length="8"
+                      name="MaandJaar" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Maandnaam]"
+                      dataType="wstr"
+                      length="15"
+                      name="Maandnaam" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[MaandKort]"
+                      dataType="wstr"
+                      length="3"
+                      name="MaandKort" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[jjjj-mm]"
+                      dataType="wstr"
+                      length="7"
+                      name="jjjj-mm" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Weeknummer]"
+                      dataType="i4"
+                      name="Weeknummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[WeekJaar]"
+                      dataType="wstr"
+                      length="8"
+                      name="WeekJaar" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Week]"
+                      dataType="wstr"
+                      length="3"
+                      name="Week" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarWeek]"
+                      dataType="wstr"
+                      length="8"
+                      name="JaarWeek" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Dagnummer]"
+                      dataType="i4"
+                      name="Dagnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Dag]"
+                      dataType="wstr"
+                      length="10"
+                      name="Dag" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Weekdagnummer]"
+                      dataType="i4"
+                      name="Weekdagnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[JaarDagNummer]"
+                      dataType="i4"
+                      name="JaarDagNummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DagKort]"
+                      dataType="wstr"
+                      length="3"
+                      name="DagKort" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[IsWeekend]"
+                      dataType="wstr"
+                      length="3"
+                      name="IsWeekend" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[IsWettelijkeFeestdag]"
+                      dataType="wstr"
+                      length="3"
+                      name="IsWettelijkeFeestdag" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DDVEC]"
+                      dataType="nText"
+                      name="DDVEC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHVEC]"
+                      dataType="nText"
+                      name="FHVEC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FG]"
+                      dataType="nText"
+                      name="FG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHX]"
+                      dataType="nText"
+                      name="FHX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHXH]"
+                      dataType="nText"
+                      name="FHXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHN]"
+                      dataType="nText"
+                      name="FHN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FHNH]"
+                      dataType="nText"
+                      name="FHNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FXX]"
+                      dataType="nText"
+                      name="FXX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[FXXH]"
+                      dataType="nText"
+                      name="FXXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TG]"
+                      dataType="nText"
+                      name="TG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TN]"
+                      dataType="nText"
+                      name="TN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TNH]"
+                      dataType="nText"
+                      name="TNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TX]"
+                      dataType="nText"
+                      name="TX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[TXH]"
+                      dataType="nText"
+                      name="TXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[T10N]"
+                      dataType="nText"
+                      name="T10N" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[T10NH]"
+                      dataType="nText"
+                      name="T10NH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[SQ]"
+                      dataType="nText"
+                      name="SQ" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[SP]"
+                      dataType="nText"
+                      name="SP" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[Q]"
+                      dataType="nText"
+                      name="Q" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[DR]"
+                      dataType="nText"
+                      name="DR" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[RH]"
+                      dataType="nText"
+                      name="RH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[RHX]"
+                      dataType="nText"
+                      name="RHX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[RHXH]"
+                      dataType="nText"
+                      name="RHXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PG]"
+                      dataType="nText"
+                      name="PG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PX]"
+                      dataType="nText"
+                      name="PX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PXH]"
+                      dataType="nText"
+                      name="PXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PN]"
+                      dataType="nText"
+                      name="PN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[PNH]"
+                      dataType="nText"
+                      name="PNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVN]"
+                      dataType="nText"
+                      name="VVN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVNH]"
+                      dataType="nText"
+                      name="VVNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVX]"
+                      dataType="nText"
+                      name="VVX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[VVXH]"
+                      dataType="nText"
+                      name="VVXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[NG]"
+                      dataType="nText"
+                      name="NG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UG]"
+                      dataType="nText"
+                      name="UG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UX]"
+                      dataType="nText"
+                      name="UX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UXH]"
+                      dataType="nText"
+                      name="UXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UN]"
+                      dataType="nText"
+                      name="UN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[UNH]"
+                      dataType="nText"
+                      name="UNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input].ExternalColumns[EV2]"
+                      dataType="nText"
+                      name="EV2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Calender\DWH Calender.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Calender\DWH Calender.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\DWH Calender.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Calender\DWH Calender.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\DWH Calender.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Calender\OLTP Datum"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLTP Datum"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[clean].[Banen]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [DatumID]
+      ,[DimDatum].[Datum]
+      ,[DatumDateTime]
+      ,[Datumnaam]
+      ,[Datumtekst]
+      ,[Jaar]
+      ,[Semesternummer]
+      ,[Semester]
+      ,[JaarSemester]
+      ,[Kwartaalnummer]
+      ,[Kwartaal]
+      ,[JaarKwartaal]
+      ,[Maandnummer]
+      ,[Maand]
+      ,[JaarMaandnummer]
+      ,[MaandJaar]
+      ,[Maandnaam]
+      ,[MaandKort]
+      ,[jjjj-mm]
+      ,[Weeknummer]
+      ,[WeekJaar]
+      ,[Week]
+      ,[JaarWeek]
+      ,[Dagnummer]
+      ,[Dag]
+      ,[Weekdagnummer]
+      ,[JaarDagNummer]
+      ,[DagKort]
+      ,[IsWeekend]
+      ,[IsWettelijkeFeestdag]
+	  ,[oltpWeerID]
+      ,[DDVEC]
+      ,[FHVEC]
+      ,[FG]
+      ,[FHX]
+      ,[FHXH]
+      ,[FHN]
+      ,[FHNH]
+      ,[FXX]
+      ,[FXXH]
+      ,[TG]
+      ,[TN]
+      ,[TNH]
+      ,[TX]
+      ,[TXH]
+      ,[T10N]
+      ,[T10NH]
+      ,[SQ]
+      ,[SP]
+      ,[Q]
+      ,[DR]
+      ,[RH]
+      ,[RHX]
+      ,[RHXH]
+      ,[PG]
+      ,[PX]
+      ,[PXH]
+      ,[PN]
+      ,[PNH]
+      ,[VVN]
+      ,[VVNH]
+      ,[VVX]
+      ,[VVXH]
+      ,[NG]
+      ,[UG]
+      ,[UX]
+      ,[UXH]
+      ,[UN]
+      ,[UNH]
+      ,[EV2]
+  FROM [dbo].[DimDatum]
+  LEFT JOIN [clean].[Weer] ON [dbo].[DimDatum].[Datum] = [clean].[Weer].[Datum]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Calender\OLTP Datum.Connections[OleDbConnection]"
+                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL_OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DatumID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DatumID]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DatumID]"
+                      name="DatumID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datum]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datum]"
+                      name="Datum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DatumDateTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DatumDateTime]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DatumDateTime]"
+                      name="DatumDateTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datumnaam]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Datumnaam]"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datumnaam]"
+                      name="Datumnaam"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datumtekst]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Datumtekst]"
+                      length="20"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Datumtekst]"
+                      name="Datumtekst"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Jaar]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Jaar]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Jaar]"
+                      name="Jaar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Semesternummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Semesternummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Semesternummer]"
+                      name="Semesternummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Semester]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Semester]"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Semester]"
+                      name="Semester"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarSemester]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarSemester]"
+                      length="7"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarSemester]"
+                      name="JaarSemester"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Kwartaalnummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Kwartaalnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Kwartaalnummer]"
+                      name="Kwartaalnummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Kwartaal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Kwartaal]"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Kwartaal]"
+                      name="Kwartaal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarKwartaal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarKwartaal]"
+                      length="7"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarKwartaal]"
+                      name="JaarKwartaal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maandnummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Maandnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maandnummer]"
+                      name="Maandnummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maand]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Maand]"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maand]"
+                      name="Maand"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarMaandnummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarMaandnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarMaandnummer]"
+                      name="JaarMaandnummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[MaandJaar]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[MaandJaar]"
+                      length="8"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[MaandJaar]"
+                      name="MaandJaar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maandnaam]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Maandnaam]"
+                      length="15"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Maandnaam]"
+                      name="Maandnaam"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[MaandKort]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[MaandKort]"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[MaandKort]"
+                      name="MaandKort"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[jjjj-mm]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[jjjj-mm]"
+                      length="7"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[jjjj-mm]"
+                      name="jjjj-mm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Weeknummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Weeknummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Weeknummer]"
+                      name="Weeknummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[WeekJaar]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[WeekJaar]"
+                      length="8"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[WeekJaar]"
+                      name="WeekJaar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Week]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Week]"
+                      name="Week"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarWeek]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarWeek]"
+                      length="8"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarWeek]"
+                      name="JaarWeek"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Dagnummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Dagnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Dagnummer]"
+                      name="Dagnummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Dag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Dag]"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Dag]"
+                      name="Dag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Weekdagnummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Weekdagnummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Weekdagnummer]"
+                      name="Weekdagnummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarDagNummer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarDagNummer]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[JaarDagNummer]"
+                      name="JaarDagNummer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DagKort]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DagKort]"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DagKort]"
+                      name="DagKort"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[IsWeekend]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[IsWeekend]"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[IsWeekend]"
+                      name="IsWeekend"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[IsWettelijkeFeestdag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[IsWettelijkeFeestdag]"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[IsWettelijkeFeestdag]"
+                      name="IsWettelijkeFeestdag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[oltpWeerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[oltpWeerID]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[oltpWeerID]"
+                      name="oltpWeerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DDVEC]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DDVEC]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DDVEC]"
+                      name="DDVEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHVEC]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHVEC]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHVEC]"
+                      name="FHVEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FG]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FG]"
+                      name="FG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHX]"
+                      name="FHX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHXH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHXH]"
+                      name="FHXH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHN]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHN]"
+                      name="FHN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHNH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FHNH]"
+                      name="FHNH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FXX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FXX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FXX]"
+                      name="FXX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FXXH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FXXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[FXXH]"
+                      name="FXXH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TG]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TG]"
+                      name="TG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TN]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TN]"
+                      name="TN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TNH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TNH]"
+                      name="TNH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TX]"
+                      name="TX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TXH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[TXH]"
+                      name="TXH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[T10N]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[T10N]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[T10N]"
+                      name="T10N"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[T10NH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[T10NH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[T10NH]"
+                      name="T10NH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[SQ]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[SQ]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[SQ]"
+                      name="SQ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[SP]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[SP]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[SP]"
+                      name="SP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Q]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Q]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[Q]"
+                      name="Q"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DR]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DR]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[DR]"
+                      name="DR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[RH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RH]"
+                      name="RH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RHX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[RHX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RHX]"
+                      name="RHX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RHXH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[RHXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[RHXH]"
+                      name="RHXH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PG]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PG]"
+                      name="PG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PX]"
+                      name="PX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PXH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PXH]"
+                      name="PXH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PN]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PN]"
+                      name="PN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PNH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[PNH]"
+                      name="PNH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVN]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVN]"
+                      name="VVN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVNH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVNH]"
+                      name="VVNH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVX]"
+                      name="VVX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVXH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[VVXH]"
+                      name="VVXH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[NG]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[NG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[NG]"
+                      name="NG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UG]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UG]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UG]"
+                      name="UG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UX]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UX]"
+                      name="UX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UXH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UXH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UXH]"
+                      name="UXH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UN]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UN]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UN]"
+                      name="UN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UNH]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UNH]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[UNH]"
+                      name="UNH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[EV2]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[EV2]"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].Columns[EV2]"
+                      name="EV2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DatumID]"
+                      dataType="i4"
+                      name="DatumID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
+                      dataType="wstr"
+                      length="10"
+                      name="Datum" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DatumDateTime]"
+                      dataType="dbTimeStamp"
+                      name="DatumDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Datumnaam]"
+                      dataType="wstr"
+                      length="10"
+                      name="Datumnaam" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Datumtekst]"
+                      dataType="wstr"
+                      length="20"
+                      name="Datumtekst" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Jaar]"
+                      dataType="i4"
+                      name="Jaar" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Semesternummer]"
+                      dataType="i4"
+                      name="Semesternummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Semester]"
+                      dataType="wstr"
+                      length="3"
+                      name="Semester" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarSemester]"
+                      dataType="wstr"
+                      length="7"
+                      name="JaarSemester" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Kwartaalnummer]"
+                      dataType="i4"
+                      name="Kwartaalnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Kwartaal]"
+                      dataType="wstr"
+                      length="3"
+                      name="Kwartaal" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarKwartaal]"
+                      dataType="wstr"
+                      length="7"
+                      name="JaarKwartaal" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Maandnummer]"
+                      dataType="i4"
+                      name="Maandnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Maand]"
+                      dataType="wstr"
+                      length="10"
+                      name="Maand" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarMaandnummer]"
+                      dataType="i4"
+                      name="JaarMaandnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[MaandJaar]"
+                      dataType="wstr"
+                      length="8"
+                      name="MaandJaar" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Maandnaam]"
+                      dataType="wstr"
+                      length="15"
+                      name="Maandnaam" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[MaandKort]"
+                      dataType="wstr"
+                      length="3"
+                      name="MaandKort" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[jjjj-mm]"
+                      dataType="wstr"
+                      length="7"
+                      name="jjjj-mm" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Weeknummer]"
+                      dataType="i4"
+                      name="Weeknummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[WeekJaar]"
+                      dataType="wstr"
+                      length="8"
+                      name="WeekJaar" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      dataType="wstr"
+                      length="3"
+                      name="Week" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarWeek]"
+                      dataType="wstr"
+                      length="8"
+                      name="JaarWeek" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Dagnummer]"
+                      dataType="i4"
+                      name="Dagnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Dag]"
+                      dataType="wstr"
+                      length="10"
+                      name="Dag" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Weekdagnummer]"
+                      dataType="i4"
+                      name="Weekdagnummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[JaarDagNummer]"
+                      dataType="i4"
+                      name="JaarDagNummer" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DagKort]"
+                      dataType="wstr"
+                      length="3"
+                      name="DagKort" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[IsWeekend]"
+                      dataType="wstr"
+                      length="3"
+                      name="IsWeekend" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[IsWettelijkeFeestdag]"
+                      dataType="wstr"
+                      length="3"
+                      name="IsWettelijkeFeestdag" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[oltpWeerID]"
+                      dataType="i4"
+                      name="oltpWeerID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DDVEC]"
+                      dataType="nText"
+                      name="DDVEC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHVEC]"
+                      dataType="nText"
+                      name="FHVEC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FG]"
+                      dataType="nText"
+                      name="FG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHX]"
+                      dataType="nText"
+                      name="FHX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHXH]"
+                      dataType="nText"
+                      name="FHXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHN]"
+                      dataType="nText"
+                      name="FHN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FHNH]"
+                      dataType="nText"
+                      name="FHNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FXX]"
+                      dataType="nText"
+                      name="FXX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[FXXH]"
+                      dataType="nText"
+                      name="FXXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TG]"
+                      dataType="nText"
+                      name="TG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TN]"
+                      dataType="nText"
+                      name="TN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TNH]"
+                      dataType="nText"
+                      name="TNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TX]"
+                      dataType="nText"
+                      name="TX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[TXH]"
+                      dataType="nText"
+                      name="TXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[T10N]"
+                      dataType="nText"
+                      name="T10N" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[T10NH]"
+                      dataType="nText"
+                      name="T10NH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[SQ]"
+                      dataType="nText"
+                      name="SQ" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[SP]"
+                      dataType="nText"
+                      name="SP" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[Q]"
+                      dataType="nText"
+                      name="Q" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[DR]"
+                      dataType="nText"
+                      name="DR" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[RH]"
+                      dataType="nText"
+                      name="RH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[RHX]"
+                      dataType="nText"
+                      name="RHX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[RHXH]"
+                      dataType="nText"
+                      name="RHXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PG]"
+                      dataType="nText"
+                      name="PG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PX]"
+                      dataType="nText"
+                      name="PX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PXH]"
+                      dataType="nText"
+                      name="PXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PN]"
+                      dataType="nText"
+                      name="PN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[PNH]"
+                      dataType="nText"
+                      name="PNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVN]"
+                      dataType="nText"
+                      name="VVN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVNH]"
+                      dataType="nText"
+                      name="VVNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVX]"
+                      dataType="nText"
+                      name="VVX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[VVXH]"
+                      dataType="nText"
+                      name="VVXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[NG]"
+                      dataType="nText"
+                      name="NG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UG]"
+                      dataType="nText"
+                      name="UG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UX]"
+                      dataType="nText"
+                      name="UX" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UXH]"
+                      dataType="nText"
+                      name="UXH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UN]"
+                      dataType="nText"
+                      name="UN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[UNH]"
+                      dataType="nText"
+                      name="UNH" />
+                    <externalMetadataColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output].ExternalColumns[EV2]"
+                      dataType="nText"
+                      name="EV2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DatumID]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DatumID]"
+                      name="DatumID" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Datum]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Datum]"
+                      name="Datum" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DatumDateTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DatumDateTime]"
+                      name="DatumDateTime" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Datumnaam]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Datumnaam]"
+                      name="Datumnaam" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Datumtekst]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Datumtekst]"
+                      name="Datumtekst" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Jaar]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Jaar]"
+                      name="Jaar" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Semesternummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Semesternummer]"
+                      name="Semesternummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Semester]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Semester]"
+                      name="Semester" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarSemester]"
+                      dataType="wstr"
+                      length="7"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarSemester]"
+                      name="JaarSemester" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Kwartaalnummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Kwartaalnummer]"
+                      name="Kwartaalnummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Kwartaal]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Kwartaal]"
+                      name="Kwartaal" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarKwartaal]"
+                      dataType="wstr"
+                      length="7"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarKwartaal]"
+                      name="JaarKwartaal" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Maandnummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Maandnummer]"
+                      name="Maandnummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Maand]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Maand]"
+                      name="Maand" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarMaandnummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarMaandnummer]"
+                      name="JaarMaandnummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[MaandJaar]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[MaandJaar]"
+                      name="MaandJaar" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Maandnaam]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Maandnaam]"
+                      name="Maandnaam" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[MaandKort]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[MaandKort]"
+                      name="MaandKort" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[jjjj-mm]"
+                      dataType="wstr"
+                      length="7"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[jjjj-mm]"
+                      name="jjjj-mm" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Weeknummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Weeknummer]"
+                      name="Weeknummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[WeekJaar]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[WeekJaar]"
+                      name="WeekJaar" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      name="Week" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarWeek]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarWeek]"
+                      name="JaarWeek" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Dagnummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Dagnummer]"
+                      name="Dagnummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Dag]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Dag]"
+                      name="Dag" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Weekdagnummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Weekdagnummer]"
+                      name="Weekdagnummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarDagNummer]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[JaarDagNummer]"
+                      name="JaarDagNummer" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DagKort]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DagKort]"
+                      name="DagKort" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[IsWeekend]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[IsWeekend]"
+                      name="IsWeekend" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[IsWettelijkeFeestdag]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[IsWettelijkeFeestdag]"
+                      name="IsWettelijkeFeestdag" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[oltpWeerID]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[oltpWeerID]"
+                      name="oltpWeerID" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DDVEC]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DDVEC]"
+                      name="DDVEC" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHVEC]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHVEC]"
+                      name="FHVEC" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FG]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FG]"
+                      name="FG" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHX]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHX]"
+                      name="FHX" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHXH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHXH]"
+                      name="FHXH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHN]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHN]"
+                      name="FHN" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHNH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FHNH]"
+                      name="FHNH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FXX]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FXX]"
+                      name="FXX" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FXXH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[FXXH]"
+                      name="FXXH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TG]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TG]"
+                      name="TG" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TN]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TN]"
+                      name="TN" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TNH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TNH]"
+                      name="TNH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TX]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TX]"
+                      name="TX" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TXH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[TXH]"
+                      name="TXH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[T10N]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[T10N]"
+                      name="T10N" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[T10NH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[T10NH]"
+                      name="T10NH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[SQ]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[SQ]"
+                      name="SQ" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[SP]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[SP]"
+                      name="SP" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Q]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[Q]"
+                      name="Q" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DR]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[DR]"
+                      name="DR" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[RH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[RH]"
+                      name="RH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[RHX]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[RHX]"
+                      name="RHX" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[RHXH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[RHXH]"
+                      name="RHXH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PG]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PG]"
+                      name="PG" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PX]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PX]"
+                      name="PX" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PXH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PXH]"
+                      name="PXH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PN]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PN]"
+                      name="PN" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PNH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[PNH]"
+                      name="PNH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVN]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVN]"
+                      name="VVN" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVNH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVNH]"
+                      name="VVNH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVX]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVX]"
+                      name="VVX" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVXH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[VVXH]"
+                      name="VVXH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[NG]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[NG]"
+                      name="NG" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UG]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UG]"
+                      name="UG" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UX]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UX]"
+                      name="UX" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UXH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UXH]"
+                      name="UXH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UN]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UN]"
+                      name="UN" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UNH]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[UNH]"
+                      name="UNH" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[EV2]"
+                      dataType="nText"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[EV2]"
+                      name="EV2" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Calender.Paths[OLE DB Source Output]"
+              endId="Package\Import Calender\DWH Calender.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import Calender\OLTP Datum.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate DimCalender"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{51E4327B-FAA2-4A8A-8108-96D0F1D9AC91}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate DimCalender"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.DIM_Calender" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AB318AA7-BED9-47E4-B889-A6652A5C3FB2}"
+      DTS:From="Package\Truncate DimCalender"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Calender" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Import Calender"
+          TopLeft="247.142861351675,99.4117661000948" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Truncate DimCalender"
+          TopLeft="237.857146907826,12.2352942892424" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="327.10000412975,53.8352942892424">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5764718108524"
+              Start="0,0"
+              End="0,38.0764718108524">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0764718108524" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Calender">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Import Calender\OLTP Datum"
+          TopLeft="317.142862543768,32.1176475092614" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Import Calender\DWH Calender"
+          TopLeft="314.285719637968,139.176472540132" />
+        <EdgeLayout
+          Id="Package\Import Calender.Paths[OLE DB Source Output]"
+          TopLeft="387.114291090868,73.7176475092614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.4588250308709"
+              Start="0,0"
+              End="0,57.9588250308709">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.9588250308709" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Calender\DWH Calender">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Calender\OLTP Datum">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
