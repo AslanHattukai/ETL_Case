@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/2/2022 12:57:58 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="WF_Master"
   DTS:PackageType="5"
   DTS:VersionBuild="23"
-  DTS:VersionGUID="{41C98FFF-9E9A-43E6-AC8A-BF34FDB1BE10}">
+  DTS:VersionGUID="{CA4A4C83-A0C0-47BD-B86D-79752ACAA5C0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

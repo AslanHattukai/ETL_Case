@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="SQL_OLTP"
   DTS:DTSID="{61372E72-63B5-4832-9027-D1BD4C7274AE}"
@@ -7,6 +7,6 @@
     DTS:Name="ConnectionString">@[$Project::SQL_OLTP_ConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-oltp;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-oltp;Password =!OrdinaMarch2022;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/2/2022 12:57:58 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="Dim_Vlucht"
   DTS:PackageType="5"
   DTS:VersionBuild="20"
-  DTS:VersionGUID="{B06005A5-C26F-438B-AB4A-7140C1C6B22B}">
+  DTS:VersionGUID="{885D9177-B6C9-4EAD-9539-AEE71B1A7401}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -90,8 +90,8 @@
               <connections>
                 <connection
                   refId="Package\Import Vlucht\DWH Vlucht.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -212,8 +212,8 @@ FROM clean.vlucht;</property>
               <connections>
                 <connection
                   refId="Package\Import Vlucht\OLTP Vlucht.Connections[OleDbConnection]"
-                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_OLTP]"
+                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:invalid"
+                  connectionManagerRefId="{61372E72-63B5-4832-9027-D1BD4C7274AE}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

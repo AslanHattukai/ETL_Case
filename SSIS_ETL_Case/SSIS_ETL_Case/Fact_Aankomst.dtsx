@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/2/2022 12:57:58 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="Fact_Aankomst"
   DTS:PackageType="5"
   DTS:VersionBuild="36"
-  DTS:VersionGUID="{D0295321-B73D-435A-9327-0030EF944544}">
+  DTS:VersionGUID="{24323184-373F-46BD-842B-A8EDB8719D55}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -125,8 +125,8 @@ where [refTable].[Baannummer] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Banen.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -283,8 +283,8 @@ where [refTable].[Datum] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Calender.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -431,8 +431,8 @@ where [refTable].[Datum] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\DWH Fact Aankomst.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -721,8 +721,8 @@ where [refTable].[Terminal] = ? and [refTable].[Gate] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Gate.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -899,8 +899,8 @@ where [refTable].[oltpAankomstID] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Load Incremental.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1040,8 +1040,8 @@ where [refTable].[IATA] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Luchthavens.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1199,8 +1199,8 @@ where [refTable].[IATA] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Maatschappijen.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1366,8 +1366,8 @@ where [refTable].[IATA] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\OLTP Aankomst.Connections[OleDbConnection]"
-                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_OLTP]"
+                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:invalid"
+                  connectionManagerRefId="{61372E72-63B5-4832-9027-D1BD4C7274AE}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1785,8 +1785,8 @@ where [refTable].[Vluchtnr] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Planning.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1945,8 +1945,8 @@ where [refTable].[Tijd] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Tijd.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2134,8 +2134,8 @@ where [refTable].[Vliegtuigcode] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Vliegtuig.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2322,8 +2322,8 @@ where [refTable].[VluchtType] = ?</property>
               <connections>
                 <connection
                   refId="Package\Import Aankomst\Vlucht.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>

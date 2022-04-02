@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">C9601220</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQKcMOvmeNUGdr928ax3dRwAAAAACAAAAAAAQZgAAAAEAACAAAAAH1iYSrKYPPizxUkbW32f+rEV1E7z98MnVGrMKZcjZeQAAAAAOgAAAAAIAACAAAACxfody2qQQe7x/5005G+7LX6JRRwDQRVMAo52GLNBBP5AAAACAJMKyDuV1sMtHs4i9ORg7SQZqhqWuoM+pPzwmQSu34slkofh4ZsmRmJdrnKpxI2oSVrY3WAp3bJWh71IHN9ezd8xRvKjEs5x9uBTZ7PU9vKdf/Elj+Sbj2tzpOsZvOOFi+vIomHATl1WYpUFR5L1iOiKMwPtdm/kQdrIv10fr+a5vElfLOfiDU4AkFl9+gW5AAAAAS5Pw8YmDHKW5VmRgyTRQavv/Hv3QiUJzNI3RdeAcs+8lp9GH4uWs9IMypZAn1lIrXh3t1bGGEIpeeXYLoTtUhg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQKcMOvmeNUGdr928ax3dRwAAAAACAAAAAAAQZgAAAAEAACAAAAC4migM+AGTtLz8clK5It/g5/RJZRmRGoYuCgp6fnikhQAAAAAOgAAAAAIAACAAAAAnxzajrDDYU/biJqEFQnmtB3J3xU+t9BGT4mOC82M5A5AAAACspGxZmrnZW88ti/nmpIjFlB5VUS+9SNGxOt5o+OuvWq945KcH4PbFq7vnryZ+qyjy24VT2mg7M3BzresUV91goGzUdm4xtgZGHnCiunDL3Tv9Rx+BIhXAnSNBY7hd+Y4EkJHfMO5vKuKtW9+rxcXz4lZKLfDYnuPdimMV1E354iqJF/mToJANl0iWW6vz1u9AAAAAk+nimF60cmJqdoXcjSUtACMuYAUXGNnzq2ZMy7QB9fOrQZwPr1nMM2sK6yyOVmb41y4hkWmBRMtYMjG4Cy4jdQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -63,21 +63,6 @@
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.SQL_OLTP.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-oltp;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{61372E72-63B5-4832-9027-D1BD4C7274AE}sql-ypp-march-2022.database.windows.net.db-oltp.YppAdmin;Auto Translate=False;</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.SQL_OLTP.ConnectUsingManagedIdentity">
@@ -182,21 +167,6 @@
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.SQL_DWH.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=sql-ypp-march-2022.database.windows.net;User ID=YppAdmin;Initial Catalog=db-dwh;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}sql-ypp-march-2022.database.windows.net.db-dwh.YppAdmin;</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.SQL_DWH.ConnectUsingManagedIdentity">
@@ -527,7 +497,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <TargetServerVersion>SQLServer2019</TargetServerVersion>
+        <TargetServerVersion>SQLServer2017</TargetServerVersion>
         <AzureMode>false</AzureMode>
         <LinkedAzureTenantId />
         <LinkedAzureAccountId />

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/2/2022 12:57:58 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="Dim_Planning"
   DTS:PackageType="5"
   DTS:VersionBuild="12"
-  DTS:VersionGUID="{0F29A1CE-AA11-4647-AFB0-4BAB25F8DB5F}">
+  DTS:VersionGUID="{E970A3A5-4FFA-4FB6-8E71-17E4E098CF98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -90,8 +90,8 @@
               <connections>
                 <connection
                   refId="Package\Import Planning\DWH Planning.Connections[OleDbConnection]"
-                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_DWH]"
+                  connectionManagerID="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
+                  connectionManagerRefId="{9BDFFC7F-3C05-4AAD-B38E-421D28750D10}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -281,8 +281,8 @@
               <connections>
                 <connection
                   refId="Package\Import Planning\OLTP Planning.Connections[OleDbConnection]"
-                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQL_OLTP]"
+                  connectionManagerID="{61372E72-63B5-4832-9027-D1BD4C7274AE}:invalid"
+                  connectionManagerRefId="{61372E72-63B5-4832-9027-D1BD4C7274AE}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
